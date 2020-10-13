@@ -22,23 +22,6 @@ const StyledContainer = styled.div`
   background-color: #2b2020;
 `;
 
-// const StyledContainer = styled.div`
-//   margin-right: auto;
-//   margin-left: auto;
-//   height: 40rem;
-//   width: 40rem;
-//   border: none;
-//   border-radius: 4rem 4rem 4rem 4rem;
-//   padding: 2rem 1rem 2rem 2rem;
-//   opacity: 0.9;
-//   background-color: #2b2020;
-//   background-image: url(${BaseballHatLogo});
-//   background-attachment: local;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// `;
-
 const Title = styled.h1`
   text-align: center;
   margin-top: -2rem;
@@ -72,3 +55,20 @@ const About = () => (
 );
 
 export default About;
+
+// const StyledContainer = styled.div`
+//   margin-right: auto;
+//   margin-left: auto;
+//   height: 40rem;
+//   width: 40rem;
+//   border: none;
+//   border-radius: 4rem 4rem 4rem 4rem;
+//   padding: 2rem 1rem 2rem 2rem;
+//   opacity: 0.9;
+//   background-color: #2b2020;
+//   background-image: url(${BaseballHatLogo});
+//   background-attachment: local;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// `;

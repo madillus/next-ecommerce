@@ -19,19 +19,13 @@ const StyledContainer = styled.div`
   background-position: center;
 `;
 
-// const StyledPhoto = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   background-image: url(${BaseballHatLogo});
-// `;
-
 const Title = styled.h1`
   text-align: center;
   margin-top: -2rem;
   font-size: 7rem;
   color: #933a16;
   font-weight: 700;
+
   @media (max-width: 500px) {
     font-size: 3rem;
   }
@@ -41,8 +35,8 @@ const Description = styled.p`
   text-align: center;
   margin-top: 25rem;
   font-size: 5rem;
-  color: #fff;
-  font-weight: 300;
+  color: #933a16;
+  font-weight: 700;
   text-align: center;
   @media (max-width: 500px) {
     font-size: 0.75rem;
@@ -57,3 +51,10 @@ const Card = ({ title, description }) => (
 );
 
 export default Card;
+
+// const StyledPhoto = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   background-image: url(${BaseballHatLogo});
+// `;

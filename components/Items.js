@@ -61,9 +61,40 @@ const CartButton = styled.button`
   margin-right: auto;
 `;
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const products = [
+  {
+    id: '1',
+    desc: 'baseBall',
+    price: '20,',
+  },
+  {
+    id: '2',
+    desc: 'trucker',
+    price: '20',
+  },
+  {
+    id: '3',
+    desc: 'fitted',
+    price: '20',
+  },
+  {
+    id: '4',
+    desc: 'strapBack',
+    price: '20',
+  },
+  {
+    id: '5',
+    desc: 'flexFit',
+    price: '20',
+  },
+  {
+    id: '6',
+    desc: 'fivePanel',
+    price: '20',
+  },
+];
 
-export default function Album() {
+export default function Items() {
   return (
     <main>
       <HeroContent>
@@ -83,8 +114,15 @@ export default function Album() {
       </HeroContent>
       <CardGrid>
         <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+          {products.map((product) => (
+            <Grid item key={product} xs={12} sm={6} md={4}>
+              <Link href={`/products/${product.id}`}>
+                <a>
+                  {product.name}
+                  {product.image}
+                  {product.price}
+                </a>
+              </Link>
               <CardCard>
                 <Link href="/trucker1">
                   <CardImage />

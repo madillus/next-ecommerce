@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import Tooltip from '@material-ui/core/Tooltip';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import LogoWhite from '../images/LogoWhite.png';
 import styled from 'styled-components';
@@ -24,13 +23,13 @@ const HeaderTop = styled.header`
 //   background-position: center;
 //   margin-right: auto;
 //   margin-left: auto;
-//   height: 4rem;
-//   width: 4rem;
-//   border: none;
+//   width: auto;
+//   height: auto;
+//   border: none
 // `;
 
 const NavSection = styled.section`
-  width: 30rem;
+  width: 40rem;
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
@@ -51,13 +50,6 @@ const NavText = styled.a`
   }
 `;
 
-// const VisitedLink = styled.a`
-//   text-decoration: none;
-//   :hover & {
-//     color: orange;
-//   }
-// `;
-
 export default function Header(props) {
   return (
     <header>
@@ -70,10 +62,11 @@ export default function Header(props) {
             </Link>
           </NavText>
           <NavText>
-            <Link href="/collection">
+            <Link href="/products/product-list">
               <NavText>COLLECTION</NavText>
             </Link>
           </NavText>
+
           <NavText>
             <Link href="/about">
               <NavText>ABOUT US</NavText>
@@ -89,88 +82,3 @@ export default function Header(props) {
     </header>
   );
 }
-
-// <header
-//   style={{
-//     display: 'flex',
-//     justifyContent: 'space-between',
-//     padding: 30,
-//     background: '#190000',
-//     color: 'whitesmoke',
-//     paddingLeft: 40,
-//     paddingRight: 40,
-//   }}
-// >
-//   <Link href="/">
-//     <a>
-//       <div
-//         style={{
-//           marginTop: -30,
-//           marginLeft: 40,
-//           paddingBottom: 30,
-
-//           paddingLeft: 30,
-//           paddingRight: 30,
-//           position: 'absolute',
-//           borderRadius: '0px 0px 60px 60px ',
-//         }}
-//       >
-//         <img src="/LogoWhite.png" alt="Logo" width="150" />
-//       </div>
-//     </a>
-//   </Link>
-//   <Link href="/">
-//     <a
-//       style={{
-//         color: 'white',
-//         marginTop: 5,
-//         marginLeft: '60%',
-//         width: '4.5%',
-//         textAlign: 'center',
-//         paddingBottom: '-50px',
-//       }}
-//     >
-//       <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-//         HOME
-//       </div>
-//     </a>
-//   </Link>
-//   <Link href="/collection">
-//     <a
-//       style={{
-//         color: 'white',
-//         marginTop: 5,
-//         textAlign: 'center',
-//       }}
-//     >
-//       <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-//         COLLECTION
-//       </div>
-//     </a>
-//   </Link>
-
-//   <Link href="/about">
-//     <a
-//       style={{
-//         color: 'white',
-//         marginTop: 5,
-//         textAlign: 'center',
-//       }}
-//     >
-//       <div style={{ borderBottom: '2px white solid', paddingBottom: 5 }}>
-//         ABOUT US
-//       </div>
-//     </a>
-//   </Link>
-//   <div
-//     style={{
-//       marginRight: 15,
-//     }}
-//   >
-//     <ShoppingCartIcon
-//       style={{
-//         marginTop: 5,
-//       }}
-//     />
-//   </div>
-// </header>

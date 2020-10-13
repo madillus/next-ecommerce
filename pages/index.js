@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import Link from 'next/link';
-import styled from 'styled-components';
-import Parent from '../components/Parent';
 
-// const LandingCard = styled;
+import Parent from '../components/Parent';
 
 export default function LandingPage() {
   return (

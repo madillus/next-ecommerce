@@ -44,7 +44,7 @@ const Title = styled.h1`
 const Description = styled.p`
   text-align: center;
   margin-top: 25rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #fff;
   font-weight: 300;
   text-align: center;
@@ -57,7 +57,7 @@ const BuyButton = styled.button`
   cursor: pointer;
   border: 0;
   margin: auto;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: ghostwhite;
   background-color: #2b2020;
   display: flex;
@@ -70,10 +70,7 @@ const Product = () => {
       <StyledOuterContainer>
         <StyledContainer>
           <Title>Trucker</Title>
-          <Description>
-            The classic, suitable for weddings, funerals even your mother in law
-            would enjoy this style
-          </Description>
+          <Description>The classic</Description>
 
           <BuyButton>BUY NOW $20</BuyButton>
         </StyledContainer>
