@@ -122,8 +122,8 @@ console.log(cart)
       <StyledRoot>
         <StyledOuterContainer>
           <StyledContainer>
-            <Title>{props.product[0].name}</Title>
-            <Description> {props.product[0].price}$</Description>
+            <Title>{props.product.name}</Title>
+            <Description> {props.product.price}$</Description>
             <InputField
               onChange={onChange}
               placeholder="Enter amount"
