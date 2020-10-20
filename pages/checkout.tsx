@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
-import styled from 'styled-components';
+
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+
 import Typography from '@material-ui/core/Typography';
 import AddressForm from '../components/AddressForm';
 import PaymentForm from '../components/PaymentForm';
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-function getStepContent(step) {
+function getStepContent(step: any ) {
   switch (step) {
     case 0:
       return <AddressForm />;
@@ -82,7 +82,7 @@ export default function Checkout() {
   };
 
   return (
-    <React.Fragment>
+
       <Layout>
         <main className={classes.layout}>
           <Paper className={classes.paper}>
@@ -96,7 +96,7 @@ export default function Checkout() {
                 </Step>
               ))}
             </Stepper>
-            <React.Fragment>
+
               {activeStep === steps.length ? (
                 <React.Fragment>
                   <Typography variant="h5" gutterBottom>
@@ -128,10 +128,10 @@ export default function Checkout() {
                   </div>
                 </React.Fragment>
               )}
-            </React.Fragment>
+
           </Paper>
         </main>
       </Layout>
-    </React.Fragment>
+
   );
 }

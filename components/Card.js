@@ -51,10 +51,3 @@ const Card = ({ title, description }) => (
 );
 
 export default Card;
-
-// const StyledPhoto = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   background-image: url(${BaseballHatLogo});
-// `;

@@ -3,13 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import nextCookies from 'next-cookies';
 import Layout from '../../components/Layout';
-import { addToCartFromCookie } from '../../util/cookies';
+import { addToCookie } from '../../util/cookies';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import BaseballHatLogo from '../../images/BaseballHatLogo.png';
 import styled from 'styled-components';
-import cookie from 'js-cookie';
-import { products } from '../../util/database';
+import { GetServerSidePropsContext } from 'next';
+// import cookie from 'js-cookie';
 
 const HeroContent = styled.div`
   border-radius: 2rem 2rem 2rem 2rem;
@@ -67,7 +67,7 @@ const CartButton = styled.button`
   margin-right: auto;
 `;
 
-export default function ProductList(props) {
+export default function ProductList(props: any) {
   const [cartConditionFromCookie, setCartConditionFromCookie] = useState(
     props.cartConditionFromCookie,
   );
@@ -75,38 +75,22 @@ export default function ProductList(props) {
   const [
     productsWithCartConditionData,
     setProductsWithCartConditionData,
-  ] = useState(products);
+  ] = useState(props.products);
 
   useEffect(() => {
     setProductsWithCartConditionData(
-      products.map((product) => {
+      props.products.map((product: any) => {
         return {
           ...product,
           cartCondition: cartConditionFromCookie.includes(product.id),
         };
       }),
     );
-  }, [cartConditionFromCookie, setProductsWithCartConditionData]);
-
-  // const [
-  //   productsWithCartConditionData,
-  //   setproductsWithCartConditionData,
-  // ] = useState(props.products);
-
-  // useEffect(() => {
-  //   setproductsWithCartConditionData(
-  //     props.products.map((product) => {
-  //       return {
-  //         ...product,
-  //         cartCondition: cartConditionFromCookie.includes(product.id),
-  //       };
-  //     }),
-  //   );
-  // }, [
-  //   props.products,
-  //   cartConditionFromCookie,
-  //   setproductsWithCartConditionData,
-  // ]);
+  }, [
+    props.products,
+    cartConditionFromCookie,
+    setProductsWithCartConditionData,
+  ]);
 
   return (
     <Layout>
@@ -118,27 +102,20 @@ export default function ProductList(props) {
           component="h1"
           variant="h2"
           align="center"
-          color="#933a16"
+
           gutterBottom
         >
           BRIKTOP
         </Typography>
-        <Typography variant="h5" align="center" color="ghostwhite" paragraph>
+        <Typography variant="h5" align="center"  paragraph>
           While our collection might be small, it is made from the highest
           quality materials, sourced from sustainable suppliers.
         </Typography>
       </HeroContent>
       <CardGrid>
         <Grid container spacing={4}>
-          {productsWithCartConditionData.map((product) => (
+          {productsWithCartConditionData.map((product: any) => (
             <Grid item key={product} xs={12} sm={6} md={4}>
-              <Link href={`/products/${product.id}`}>
-                <a>
-                  {product.name}
-
-                  {product.price}
-                </a>
-              </Link>
               <CardCard>
                 <Link href={`/products/${product.id}`}>
                   <CardImage />
@@ -156,7 +133,7 @@ export default function ProductList(props) {
                 <CartButton>{product.price}</CartButton>
                 <CartButton
                   onClick={() => {
-                    const cartCondition = addToCartFromCookie(product.id);
+                    const cartCondition = addToCookie(product.id);
                     setCartConditionFromCookie(cartCondition);
                   }}
                 >
@@ -171,9 +148,9 @@ export default function ProductList(props) {
   );
 }
 
-export function getServerSideProps(context) {
-  // const { getProducts } = await import('../../util/database');
-  // const hats = await getProducts();
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { getProducts } = await import('../../util/database');
+  const products = await getProducts();
 
   const allCookies = nextCookies(context);
 
@@ -182,7 +159,7 @@ export function getServerSideProps(context) {
   return {
     props: {
       cartConditionFromCookie: cartCondition,
-      // hats,
+      products,
     },
   };
 }

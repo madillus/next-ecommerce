@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import LogoWhite from '../images/LogoWhite.png';
+
 import styled from 'styled-components';
 
 const HeaderTop = styled.header`
@@ -73,7 +73,7 @@ export default function Header(props) {
             </Link>
           </NavText>
           <NavText>
-            <Link href="/checkout">
+            <Link href="/products/shopping-cart">
               <ShoppingCartIcon style={{ cursor: 'pointer' }} />
             </Link>
           </NavText>

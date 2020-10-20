@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { createGlobalStyle } from 'styled-components';
 import BackgroundBrick from '../images/BackgroundBrick.png';
 
